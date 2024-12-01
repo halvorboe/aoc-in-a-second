@@ -1,9 +1,6 @@
-use std::{
-    env::join_paths,
-    path::{Path, PathBuf},
-};
+use std::path::Path;
 
-use anyhow::{Error, Result};
+use anyhow::Result;
 
 pub fn read_input(day: usize) -> Result<String> {
     Ok(std::fs::read_to_string(dbg!(Path::new(env!(
