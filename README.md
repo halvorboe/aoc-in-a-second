@@ -1,1 +1,2 @@
-# aoc-in-second
+# Advent Of Code - in a second
+
