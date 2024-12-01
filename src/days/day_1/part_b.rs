@@ -3,7 +3,8 @@ use std::collections::HashMap;
 use anyhow::Result;
 
 pub fn part_b(input: &str) -> Result<i64> {
-    let mut second = HashMap::with_capacity(1000);
+    // OPTIMIZE: with_capacity to pre-allocate 1000 capacity for a 20% speedup.
+    let mut second = HashMap::new();
     let first: Vec<i64> = input
         .lines()
         .map(|line| {
