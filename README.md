@@ -1,5 +1,5 @@
 # Advent Of Code - in 1s
-Trying to solve all challenges in less than a second total.
+Trying to solve all challenges in less than a second total in Rust.
 
 | Day    | Time to Solve | Part A Benchmark | Part B Benchmark |
 |--------|---------------|------------------|------------------|
