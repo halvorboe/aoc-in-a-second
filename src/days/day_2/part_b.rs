@@ -7,7 +7,7 @@ pub fn part_b(input: &str) -> Result<i64> {
         .map(|l| {
             l.split_whitespace()
                 .map(|n| n.parse::<i64>().unwrap())
-                .collect::<Vec<i64>>()
+                .collect_vec()
         })
         .map(|row| {
             let any_match = (0..row.len())
@@ -16,8 +16,7 @@ pub fn part_b(input: &str) -> Result<i64> {
                     let (negative, positive): (bool, bool) = row
                         .iter()
                         .enumerate()
-                        .filter(|(j, _)| i != *j)
-                        .map(|(_, v)| *v)
+                        .filter_map(|(j, v)| if i != j { Some(*v) } else { None })
                         .tuple_windows()
                         .map(|(a, b)| b - a)
                         .map(|d| (d > 0 && d < 4, d > -4 && d < 0))

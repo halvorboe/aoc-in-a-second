@@ -5,11 +5,8 @@ use anyhow::Result;
 pub fn part_a(input: &str) -> Result<i64> {
     let (mut first, mut second): (Vec<i64>, Vec<i64>) = input
         .lines()
-        .map(|line| {
-            // STYLE: Can we use split_once here?
-            let mut it = line.split_whitespace().map(|n| n.parse::<i64>().unwrap());
-            (it.next().unwrap(), it.next().unwrap())
-        })
+        .map(|line| line.split_once("   ").unwrap())
+        .map(|(a, b)| (a.parse::<i64>().unwrap(), b.parse::<i64>().unwrap()))
         .unzip();
 
     first.sort_unstable();

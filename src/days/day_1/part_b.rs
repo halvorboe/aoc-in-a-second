@@ -3,23 +3,17 @@ use std::collections::HashMap;
 use anyhow::Result;
 
 pub fn part_b(input: &str) -> Result<i64> {
+    let mut first = Vec::new();
     // OPTIMIZE: with_capacity to pre-allocate 1000 capacity for a 20% speedup.
     let mut second = HashMap::new();
-    let first: Vec<i64> = input
+    input
         .lines()
-        .map(|line| {
-            let mut it = line.split_whitespace().map(|n| n.parse::<i64>().unwrap());
-            (it.next().unwrap(), it.next().unwrap())
-        })
-        .map(|(a, b)| {
-            if let Some(entry) = second.get_mut(&b) {
-                *entry += 1;
-            } else {
-                second.insert(b, 1);
-            }
-            a
-        })
-        .collect();
+        .map(|line| line.split_once("   ").unwrap())
+        .map(|(a, b)| (a.parse::<i64>().unwrap(), b.parse::<i64>().unwrap()))
+        .for_each(|(a, b)| {
+            first.push(a);
+            second.entry(b).and_modify(|c| *c += 1).or_insert(1);
+        });
 
     Ok(first
         .into_iter()
