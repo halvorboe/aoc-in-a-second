@@ -3,6 +3,6 @@ Trying to solve all challenges in less than a second total in Rust.
 
 | Day    | Time to Solve | Part A Benchmark | Part B Benchmark |
 |--------|---------------|------------------|------------------|
-| Day 1  | 166.167µs     | 52.262 µs         | 71.291µs         |
-| Day 2  | 713.375µs     | 235.49 µs        | 675.55 µs        |
-| **Total** | **974.625µs** | **-**     | **-**     |
+| Day 1  | 127.945 µs    | 42.517 µs        | 59.217 µs        |
+| Day 2  | 186.204µs µs  | 68.426 µs        | 128.48 µs        |
+| **Total** | **344.919 µs** | **-**     | **-**     |
