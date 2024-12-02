@@ -8,6 +8,7 @@ use clap::command;
 use clap::Parser;
 use days::day_1;
 use days::day_2;
+use days::day_3;
 use helpers::inputs::read_input;
 
 #[derive(Parser)]
@@ -26,7 +27,7 @@ fn main() -> Result<()> {
     let start = Instant::now();
 
     if args.all_days {
-        for day in 1..=2 {
+        for day in 1..=3 {
             run_day(day)?;
         }
     } else if let Some(day) = args.day {
@@ -50,6 +51,10 @@ fn run_day(day: u32) -> Result<()> {
         2 => {
             assert_eq!(day_2::part_a(&input)?, 472);
             assert_eq!(day_2::part_b(&input)?, 520);
+        }
+        3 => {
+            assert_eq!(day_3::part_a(&input)?, 0);
+            assert_eq!(day_3::part_b(&input)?, 0);
         }
         _ => println!("Day {} is not implemented yet.", day),
     }
