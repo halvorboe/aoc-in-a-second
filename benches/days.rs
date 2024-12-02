@@ -12,11 +12,12 @@ fn criterion_benchmark(c: &mut Criterion) {
     c.bench_function("day_1_b", |b| {
         b.iter(|| day_1::part_b(black_box(&day_1_input)))
     });
+    let day_2_input = read_input(2).unwrap();
     c.bench_function("day_2_a", |b| {
-        b.iter(|| day_2::part_a(black_box(&day_1_input)))
+        b.iter(|| day_2::part_a(black_box(&day_2_input)))
     });
     c.bench_function("day_2_b", |b| {
-        b.iter(|| day_2::part_b(black_box(&day_1_input)))
+        b.iter(|| day_2::part_b(black_box(&day_2_input)))
     });
 }
 
