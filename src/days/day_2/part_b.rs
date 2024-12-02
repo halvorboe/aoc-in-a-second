@@ -1,31 +1,30 @@
 use anyhow::Result;
+use itertools::Itertools;
 
 pub fn part_b(input: &str) -> Result<i64> {
-    let parsed: Vec<Vec<i64>> = input
+    Ok(input
         .lines()
         .map(|l| {
             l.split_whitespace()
                 .map(|n| n.parse::<i64>().unwrap())
-                .collect()
+                .collect::<Vec<i64>>()
         })
-        .collect();
-    Ok(parsed
-        .into_iter()
         .map(|row| {
             let any_match = (0..row.len())
                 .into_iter()
                 .map(|i| {
-                    let (negative, positive): (Vec<bool>, Vec<bool>) = row
+                    let (negative, positive): (bool, bool) = row
                         .iter()
                         .enumerate()
                         .filter(|(j, _)| i != *j)
                         .map(|(_, v)| *v)
-                        .collect::<Vec<i64>>()
-                        .windows(2)
-                        .map(|p| p[1] - p[0])
+                        .tuple_windows()
+                        .map(|(a, b)| b - a)
                         .map(|d| (d > 0 && d < 4, d > -4 && d < 0))
-                        .unzip();
-                    negative.into_iter().all(|b| b) || positive.into_iter().all(|b| b)
+                        .fold((true, true), |(negative, positive), (n, p)| {
+                            (negative && n, positive && p)
+                        });
+                    negative || positive
                 })
                 .any(|b| b);
             match any_match {
