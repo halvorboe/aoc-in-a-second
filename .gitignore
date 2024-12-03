@@ -24,3 +24,6 @@ Cargo.lock
 
 /target
 /inputs
+
+.ropeproject
+**/.DS_Store
