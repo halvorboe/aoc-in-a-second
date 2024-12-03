@@ -1,5 +1,5 @@
 use aoc_in_a_second::{
-    days::{day_1, day_2, day_3},
+    days::{day_1, day_2, day_3, day_4},
     helpers::inputs::read_input,
 };
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
@@ -25,6 +25,13 @@ fn criterion_benchmark(c: &mut Criterion) {
     });
     c.bench_function("day_3_b", |b| {
         b.iter(|| day_3::part_b(black_box(&day_3_input)))
+    });
+    let day_4_input = read_input(4).unwrap();
+    c.bench_function("day_4_a", |b| {
+        b.iter(|| day_4::part_a(black_box(&day_4_input)))
+    });
+    c.bench_function("day_4_b", |b| {
+        b.iter(|| day_4::part_b(black_box(&day_4_input)))
     });
 }
 
