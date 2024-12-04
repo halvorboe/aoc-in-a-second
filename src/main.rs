@@ -58,8 +58,8 @@ fn run_day(day: u32) -> Result<()> {
             assert_eq!(day_3::part_b(&input)?, 102467299);
         }
         4 => {
-            assert_eq!(day_4::part_a(&input)?, 0);
-            assert_eq!(day_4::part_b(&input)?, 0);
+            assert_eq!(day_4::part_a(&input)?, 2578);
+            assert_eq!(day_4::part_b(&input)?, 1972);
         }
         _ => println!("Day {} is not implemented yet.", day),
     }
