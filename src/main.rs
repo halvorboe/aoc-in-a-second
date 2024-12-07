@@ -6,10 +6,7 @@ use std::time::Instant;
 use anyhow::Result;
 use clap::command;
 use clap::Parser;
-use days::day_1;
-use days::day_2;
-use days::day_3;
-use days::day_4;
+use days::*;
 use helpers::inputs::read_input;
 
 #[derive(Parser)]
@@ -28,7 +25,7 @@ fn main() -> Result<()> {
     let start = Instant::now();
 
     if args.all_days {
-        for day in 1..=4 {
+        for day in 1..=7 {
             run_day(day)?;
         }
     } else if let Some(day) = args.day {
@@ -60,6 +57,18 @@ fn run_day(day: u32) -> Result<()> {
         4 => {
             assert_eq!(day_4::part_a(&input)?, 2578);
             assert_eq!(day_4::part_b(&input)?, 1972);
+        }
+        5 => {
+            assert_eq!(day_5::part_a(&input)?, 0);
+            assert_eq!(day_5::part_b(&input)?, 0);
+        }
+        6 => {
+            assert_eq!(day_6::part_a(&input)?, 0);
+            assert_eq!(day_6::part_b(&input)?, 0);
+        }
+        7 => {
+            assert_eq!(day_7::part_a(&input)?, 0);
+            assert_eq!(day_7::part_b(&input)?, 0);
         }
         _ => println!("Day {} is not implemented yet.", day),
     }
