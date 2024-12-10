@@ -7,4 +7,6 @@ Trying to solve all challenges in less than a second total in Rust.
 | Day 2     | 159.275 µs      | 60.675 µs        | 128.48 µs        |
 | Day 3     | 28.22 µs       | 8.5894 µs        | 12.834 µs        |
 | Day 4     | 298.115 µs       | 160.35 µs        | 35.731 µs        |
+| Day 5     | 298.115 µs       | 72.590 µs        | 73.918 µs        |
+| Day 6     | 298.115 µs       | 38.262 µs        | 12.121 ms        |
 | **Total** | **675.689 µs**  | **-**     | **-**     |
