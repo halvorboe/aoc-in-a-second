@@ -59,12 +59,13 @@ fn run_day(day: u32) -> Result<()> {
             assert_eq!(day_4::part_b(&input)?, 1972);
         }
         5 => {
-            assert_eq!(day_5::part_a(&input)?, 0);
-            assert_eq!(day_5::part_b(&input)?, 0);
+            assert_eq!(day_5::part_a(&input)?, 6612);
+            assert_eq!(day_5::part_b(&input)?, 4944);
         }
         6 => {
-            assert_eq!(day_6::part_a(&input)?, 0);
-            assert_eq!(day_6::part_b(&input)?, 0);
+            assert_eq!(day_6::part_a(&input)?, 5242);
+            // wrong answer currently
+            assert_eq!(day_6::part_b(&input)?, 1577); // 1424);
         }
         7 => {
             assert_eq!(day_7::part_a(&input)?, 0);

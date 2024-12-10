@@ -1,7 +1,4 @@
-use aoc_in_a_second::{
-    days::{day_1, day_2, day_3, day_4},
-    helpers::inputs::read_input,
-};
+use aoc_in_a_second::{days::*, helpers::inputs::read_input};
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 
 fn criterion_benchmark(c: &mut Criterion) {
@@ -32,6 +29,27 @@ fn criterion_benchmark(c: &mut Criterion) {
     });
     c.bench_function("day_4_b", |b| {
         b.iter(|| day_4::part_b(black_box(&day_4_input)))
+    });
+    let day_5_input = read_input(5).unwrap();
+    c.bench_function("day_5_a", |b| {
+        b.iter(|| day_5::part_a(black_box(&day_5_input)))
+    });
+    c.bench_function("day_5_b", |b| {
+        b.iter(|| day_5::part_b(black_box(&day_5_input)))
+    });
+    let day_6_input = read_input(6).unwrap();
+    c.bench_function("day_6_a", |b| {
+        b.iter(|| day_6::part_a(black_box(&day_6_input)))
+    });
+    c.bench_function("day_6_b", |b| {
+        b.iter(|| day_6::part_b(black_box(&day_6_input)))
+    });
+    let day_7_input = read_input(7).unwrap();
+    c.bench_function("day_7_a", |b| {
+        b.iter(|| day_7::part_a(black_box(&day_7_input)))
+    });
+    c.bench_function("day_7_b", |b| {
+        b.iter(|| day_7::part_b(black_box(&day_7_input)))
     });
 }
 
