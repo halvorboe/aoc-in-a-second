@@ -1,4 +1,3 @@
-from tqdm import tqdm
 
 with open("14.txt") as f:
     robots, velocities = zip(*(tuple(tuple(int(n) for n in v[2:].split(",")) for v in l.split()) for l in f))
